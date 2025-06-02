@@ -2,7 +2,9 @@ import { GetServerSideProps } from "next";
 import { getProviders, signIn, getSession, LiteralUnion, ClientSafeProvider } from "next-auth/react";
 import { useState, FormEvent } from "react";
 import { useRouter } from "next/router";
-import { BuiltInProviderType } from "next-auth/providers";
+import { BuiltInProviderType } from "next-auth/providers/index";
+// import { BuiltInProviderType } from "next-auth/providers";
+
 
 type LoginProps = {
   providers: Record<LiteralUnion<BuiltInProviderType, string>, ClientSafeProvider>;
