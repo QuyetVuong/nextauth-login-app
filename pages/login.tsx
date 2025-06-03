@@ -4,8 +4,6 @@ import { useState, FormEvent } from "react";
 import { useRouter } from "next/router";
 import { BuiltInProviderType } from "next-auth/providers/index";
 // import { BuiltInProviderType } from "next-auth/providers";
-
-
 type LoginProps = {
   providers: Record<LiteralUnion<BuiltInProviderType, string>, ClientSafeProvider>;
 };
@@ -29,7 +27,7 @@ export default function Login({ providers }: LoginProps) {
     });
 
     if (res && res.ok) {
-      router.push("/");
+      router.push("/profile");
     } else {
       setError("Đăng nhập thất bại. Vui lòng kiểm tra lại.");
     }
